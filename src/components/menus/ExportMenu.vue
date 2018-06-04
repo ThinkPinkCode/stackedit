@@ -5,9 +5,9 @@
       <div>Export as Markdown</div>
       <span>Save plain text file.</span>
     </menu-entry>
-    <menu-entry @click.native="exportAllMarkdown">
+    <menu-entry @click.native="exportAll">
       <icon-download slot="icon"></icon-download>
-      <div>Export All My Files as Markdown</div>
+      <div>Export All My Files</div>
       <span>Save all plain text files.</span>
     </menu-entry>
     <menu-entry @click.native="exportHtml">
@@ -42,7 +42,7 @@ export default {
       return exportSvc.exportToDisk(currentFile.id, 'md')
         .catch(() => { /* Cancel */ });
     },
-    exportAllMarkdown() {
+    exportAll() {
       const allFiles = this.$store.getters['file/items'];
       return exportSvc.exportAllToDisk(allFiles)
         .catch(() => { /* Cancel */ });
