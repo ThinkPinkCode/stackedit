@@ -122,7 +122,7 @@ export default {
     FileSaver.saveAs(blob, `${file.name}.${type}`);
   },
 
-  async exportAllToDisk(fileList) {
-    fileList.forEach(file => this.exportToDisk(file.id, 'md'));
+  async exportAllToDisk(fileList, fileType) {
+    fileList.forEach(file => this.exportToDisk(file.id, fileType));
   },
 };
