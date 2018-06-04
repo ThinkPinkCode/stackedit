@@ -1,8 +1,13 @@
 <template>
   <modal-inner aria-label="Export All Files">
     <div class="modal__content">
-      <p>Please choose a template for your <b>HTML export</b>.</p>
-      <form-entry label="Template">
+      <p>Please choose a file format for your exports.</p>
+
+      <button class="button">markdown</button>
+
+      <p>or</p>
+
+      <form-entry label="HTML Templates">
         <select class="textfield" slot="field" v-model="selectedTemplate" @keydown.enter="resolve()">
           <option v-for="(template, id) in allTemplates" :key="id" :value="id">
             {{ template.name }}
@@ -14,7 +19,6 @@
       </form-entry>
     </div>
     <div class="modal__button-bar">
-      <button class="button button--copy">Copy to clipboard</button>
       <button class="button" @click="config.reject()">Cancel</button>
       <button class="button" @click="resolve()">Ok</button>
     </div>
@@ -22,7 +26,6 @@
 </template>
 
 <script>
-  import Clipboard from 'clipboard';
   import exportSvc from '../../services/exportSvc';
   import modalTemplate from './common/modalTemplate';
 
@@ -48,12 +51,6 @@
       }, {
         immediate: true,
       });
-      this.clipboard = new Clipboard(this.$el.querySelector('.button--copy'), {
-        text: () => this.result,
-      });
-    },
-    destroyed() {
-      this.clipboard.destroy();
     },
     methods: {
       resolve() {
