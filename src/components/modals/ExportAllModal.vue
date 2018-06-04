@@ -3,15 +3,12 @@
     <div class="modal__content">
       <p>Please choose a file format for your exports.</p>
 
-      <button class="button">markdown</button>
-
-      <p>or</p>
-
       <form-entry label="HTML Templates">
         <select class="textfield" slot="field" v-model="selectedTemplate" @keydown.enter="resolve()">
           <option v-for="(template, id) in allTemplates" :key="id" :value="id">
             {{ template.name }}
           </option>
+          <option value="Markdown">Markdown</option>
         </select>
         <div class="form-entry__actions">
           <a href="javascript:void(0)" @click="configureTemplates">Configure templates</a>
