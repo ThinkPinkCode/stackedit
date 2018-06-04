@@ -6,7 +6,7 @@
       <form-entry>
         <select class="textfield" slot="field" v-model="selectedTemplate" @keydown.enter="resolve()">
           <optgroup label="Markdown">Markdown
-          <option value="Markdown">Markdown</option> //TODO: find better way to display
+          <option value="Markdown">Markdown</option>      //TODO: find better way to display
           </optgroup>
           <optgroup label="HTML">
           <option v-for="(template, id) in allTemplates" :key="id" :value="id">
@@ -55,10 +55,15 @@
     },
     methods: {
       resolve() {
-        const { config } = this;
-        const currentFile = this.$store.getters['file/current'];
-        config.resolve();
-        exportSvc.exportToDisk(currentFile.id, 'html', this.allTemplates[this.selectedTemplate]);
+        const allFiles = this.$store.getters['file/items'];
+        if (this.selectedTemplate === 'Markdown') {
+          exportSvc.exportAllToDisk(allFiles, 'md');
+        } else {
+          const { config } = this;
+          const currentFile = this.$store.getters['file/current'];
+          config.resolve();
+          exportSvc.exportToDisk(currentFile.id, 'html', this.allTemplates[this.selectedTemplate]);
+        }
       },
     },
   });
