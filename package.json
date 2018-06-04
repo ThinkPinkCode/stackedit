@@ -22,6 +22,7 @@
     "major": "npm version major -m \"Tag v%s\""
   },
   "dependencies": {
+    "ajv": "^6.5.0",
     "aws-sdk": "^2.133.0",
     "bezier-easing": "^1.1.0",
     "body-parser": "^1.18.2",
@@ -47,6 +48,7 @@
     "mermaid": "^7.1.0",
     "mousetrap": "^1.6.1",
     "normalize-scss": "^7.0.1",
+    "postcss-syntax": "^0.10.0",
     "prismjs": "^1.6.0",
     "request": "^2.85.0",
     "serve-static": "^1.13.2",
@@ -98,7 +100,7 @@
     "sass-loader": "^7.0.1",
     "semver": "^5.5.0",
     "shelljs": "^0.8.1",
-    "stylelint": "^9.2.0",
+    "stylelint": "^8.4.0",
     "stylelint-config-standard": "^16.0.0",
     "stylelint-processor-html": "^1.0.0",
     "stylelint-webpack-plugin": "^0.10.4",
@@ -106,7 +108,7 @@
     "vue-loader": "^15.0.9",
     "vue-style-loader": "^4.1.0",
     "vue-template-compiler": "^2.5.16",
-    "webpack": "^2.6.1",
+    "webpack": "^3.12.0",
     "webpack-bundle-analyzer": "^2.2.1",
     "webpack-dev-middleware": "^1.10.0",
     "webpack-hot-middleware": "^2.18.0",

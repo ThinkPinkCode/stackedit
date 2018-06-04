@@ -43,8 +43,7 @@ export default {
         .catch(() => { /* Cancel */ });
     },
     exportAll() {
-      const allFiles = this.$store.getters['file/items'];
-      return exportSvc.exportAllToDisk(allFiles)
+      return this.$store.dispatch('modal/open', 'exportAll')
         .catch(() => { /* Cancel */ });
     },
     exportHtml() {
