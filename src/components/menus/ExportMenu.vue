@@ -5,11 +5,6 @@
       <div>Export as Markdown</div>
       <span>Save plain text file.</span>
     </menu-entry>
-    <menu-entry @click.native="exportAll">
-      <icon-download slot="icon"></icon-download>
-      <div>Export All My Files</div>
-      <span>Save all plain text files.</span>
-    </menu-entry>
     <menu-entry @click.native="exportHtml">
       <icon-download slot="icon"></icon-download>
       <div>Export as HTML</div>
@@ -24,6 +19,11 @@
       <icon-download slot="icon"></icon-download>
       <div><div class="menu-entry__label">sponsor</div> Export with Pandoc</div>
       <span>Convert to PDF, Word, EPUB...</span>
+    </menu-entry>
+    <menu-entry @click.native="exportAll">
+      <icon-download slot="icon"></icon-download>
+      <div>Export All My Files</div>
+      <span>Save all plain text files.</span>
     </menu-entry>
   </div>
 </template>
