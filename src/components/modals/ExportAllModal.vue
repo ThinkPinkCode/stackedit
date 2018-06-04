@@ -60,9 +60,8 @@
           exportSvc.exportAllToDisk(allFiles, 'md');
         } else {
           const { config } = this;
-          const currentFile = this.$store.getters['file/current'];
           config.resolve();
-          exportSvc.exportToDisk(currentFile.id, 'html', this.allTemplates[this.selectedTemplate]);
+          exportSvc.exportAllToDisk(allFiles, 'html', this.allTemplates[this.selectedTemplate]);
         }
       },
     },
