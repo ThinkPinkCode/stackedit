@@ -121,4 +121,8 @@ export default {
     });
     FileSaver.saveAs(blob, `${file.name}.${type}`);
   },
+
+  async exportAllToDisk(fileList) {
+    fileList.forEach(file => this.exportToDisk(file.id, 'md'));
+  },
 };
