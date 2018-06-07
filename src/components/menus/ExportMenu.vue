@@ -20,6 +20,11 @@
       <div><div class="menu-entry__label">sponsor</div> Export with Pandoc</div>
       <span>Convert to PDF, Word, EPUB...</span>
     </menu-entry>
+    <menu-entry @click.native="exportAll">
+      <icon-download slot="icon"></icon-download>
+      <div>Export All My Files</div>
+      <span>Save all plain text files.</span>
+    </menu-entry>
   </div>
 </template>
 
@@ -35,6 +40,10 @@ export default {
     exportMarkdown() {
       const currentFile = this.$store.getters['file/current'];
       return exportSvc.exportToDisk(currentFile.id, 'md')
+        .catch(() => { /* Cancel */ });
+    },
+    exportAll() {
+      return this.$store.dispatch('modal/open', 'exportAll')
         .catch(() => { /* Cancel */ });
     },
     exportHtml() {

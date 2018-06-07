@@ -21,6 +21,7 @@ import TemplatesModal from './modals/TemplatesModal';
 import AboutModal from './modals/AboutModal';
 import HtmlExportModal from './modals/HtmlExportModal';
 import PdfExportModal from './modals/PdfExportModal';
+import ExportAllModal from './modals/ExportAllModal';
 import PandocExportModal from './modals/PandocExportModal';
 import LinkModal from './modals/LinkModal';
 import ImageModal from './modals/ImageModal';
@@ -66,6 +67,7 @@ export default {
     AboutModal,
     HtmlExportModal,
     PdfExportModal,
+    ExportAllModal,
     PandocExportModal,
     LinkModal,
     ImageModal,
